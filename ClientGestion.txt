@@ -1,0 +1,24 @@
+Latir
+Dominique
+Corolla, Hybride RAV4, Yaris Cross
+Client0.txt
+
+Ragoudin
+Arthur
+Yaris Cross
+Client1.txt
+
+Dumet
+Corentin
+RAV4
+Client2.txt
+
+Areson
+Bilal
+Corolla
+Client3.txt
+
+Loret
+Cristine
+PROACE CITY, SUPRA GT4
+Client4.txt
