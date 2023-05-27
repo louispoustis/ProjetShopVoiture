@@ -1,0 +1,49 @@
+
+main.o: main.c
+	gcc -o main.o -c main.c
+
+debut.o: rempStruct.c remplirStruct.c 
+	gcc -o prog rempStruct.o remplirStruct.o 
+
+modeAchat.o: clientINS Nouvclient.c 
+	   gcc -o prog clientINS.o Nouvclient.o 
+
+modeGestion.o: StockBas.c placerestante.c afficher.c choixderecherche.c choireche.c
+	     gcc -o prog StockBas.o placerestante.o affiche.o choixderecherche.o choireche.o 
+
+Nouvclient.o: clientOp  
+	    gcc -o prog clientOp.o 
+
+clientIns.o : affiche.c clientOp.c 
+	    gcc -o prog affiche.o clientOp.o 
+
+clientOp.o : ajouteachat.c comptePrix.c parcours.c 
+	   gcc -o prog ajouteachat.o comptePrix.o parcours.o 
+
+comptePrix.o : achat.c ajouteachat.c comptrePrix.c parcour.c
+	     gcc -o prog achat.o ajouteachat.o comptePrix.o parcour.o
+
+parcours.o : choixderecherche.c aff.c 
+	   gcc -o prog choixderecherche.o aff.o 
+
+
+achat.o : choixp.c modifierLigne.c 
+	gcc -o prog choixp.o modifierLigne.o 
+
+choixp.o : afficher.c deinscrire.c 
+	 gcc -o prog afficher.o deinscrire.o main.o
+
+deinscrire.o : recherche.c 
+	     gcc -o prog recherche.o 
+
+choireche.o : stock.c capacite.c restokage.c 
+	    gcc -o prog stock.o capacite.o restokage.o 
+
+choixrecherche.o : stock.c 
+		 gcc -o prog stock.o 
+
+restokage.o : modifierLigne.c placerestante.c  
+	    gcc -o prog modigierLigne.o placerestante.o  
+
+
+		
