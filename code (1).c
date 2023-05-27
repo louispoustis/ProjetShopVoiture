@@ -265,7 +265,7 @@ void modifierLigne(const char* nomFichier, int numeroLigne, const char* nouvelle
     rename("fichier.txt", nomFichier);
 }
 
-void restokage(struct voiture produits[], struct voiture ajout, int r){ // 
+void restokage(struct voiture produits[], struct voiture ajout, int r){    // Fonction qui sert à modifier les fichiers et à augmanter la quantité d'un produit dans la structure et dans le fichier du produit
     if (r == 1){
         for (int i = 0; i < PR; i++) {
             if (strcmp(produits[i].nom, ajout.nom) == 0){
