@@ -7,7 +7,7 @@
 #define MAX 40
 #define CL 5
 
-struct client{
+struct client{                  
     char nom[TAILLE];
     char prenom[TAILLE];
     char achat[TAILLE];
