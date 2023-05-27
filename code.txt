@@ -7,14 +7,14 @@
 #define MAX 40
 #define CL 5
 
-struct client{               //structure client   
+struct client{                 
     char nom[TAILLE];
     char prenom[TAILLE];
     char achat[TAILLE];
     char fichier[TAILLE];
 };
 
-struct voiture{             //structure voiture
+struct voiture{             
     char nom[TAILLE];
     int reference;
     int prix;
@@ -23,7 +23,7 @@ struct voiture{             //structure voiture
     char fichier[TAILLE];
 };
 
-int recherche(const char* fp, const char* nom){         //fonction qui permet de chercher les clients dans les fichiers
+int recherche(const char* fp, const char* nom){       
     FILE * f;
     f = fopen(fp,"r");
     if (f == NULL){
@@ -45,7 +45,7 @@ int recherche(const char* fp, const char* nom){         //fonction qui permet de
     fclose(f);
     return 0;
 }
-void rempStruct(struct client voit[], int t, const char* fp) {          // procédure pour 
+void rempStruct(struct client voit[], int t, const char* fp) {       
     FILE * f;
     f = fopen(fp, "r");
     if (f == NULL) {
@@ -75,7 +75,7 @@ void rempStruct(struct client voit[], int t, const char* fp) {          // proc�
     fclose(f);
 }
 
-void remplirStruct(struct voiture voit[], int t, const char* fp) {      //procedure pour 
+void remplirStruct(struct voiture voit[], int t, const char* fp) {      
     FILE * f;
     f = fopen(fp, "r");
     if (f == NULL) {
@@ -116,7 +116,7 @@ void remplirStruct(struct voiture voit[], int t, const char* fp) {      //proced
     fclose(f);
 }
 
-void StockBas(struct voiture produits[], int taille) {                                          // procedure qui permet de gérer la quantité de produit dans les stocks
+void StockBas(struct voiture produits[], int taille) {                                        
     printf("Attention ceci sont les produits avec les stocks les plus bas ou vide :\n");
     int a = 0;
     int i , j;
@@ -141,7 +141,7 @@ void StockBas(struct voiture produits[], int taille) {                          
     printf("\n");
 }
 
-void afficher(struct voiture produits[], int nbProduits) {      // procedure pour  les voitures que l'on peut acheter
+void afficher(struct voiture produits[], int nbProduits) {    
     printf("Liste des produits :\n");
     for (int i = 0; i < nbProduits; i++) {
         printf("Produit %d\n", i + 1);
@@ -153,7 +153,7 @@ void afficher(struct voiture produits[], int nbProduits) {      // procedure pou
         printf("\n");
     }
 }
-void aff(struct voiture produits[], int nbProduits) {       // procedure pour le choix de voiture qu'on va acheté
+void aff(struct voiture produits[], int nbProduits) {       
     printf("Liste des voitures :\n");
     for (int i = 0; i < nbProduits; i++) {
         printf("Produit %d\n", i + 1);
@@ -163,7 +163,7 @@ void aff(struct voiture produits[], int nbProduits) {       // procedure pour le
     }
 }
 
-void affiche(struct client produits) {              // procedure pour afficher la voiture acheter
+void affiche(struct client produits) {            
         printf("Nom : %s\n", produits.nom);
         printf("Prenom : %s\n", produits.prenom);
         printf("Achat precedent : %s\n", produits.achat);
@@ -171,7 +171,7 @@ void affiche(struct client produits) {              // procedure pour afficher l
 
 }
 
-struct voiture stock(struct voiture produits[],const char * nom, int reference){        // structure  pour le stock de voiture
+struct voiture stock(struct voiture produits[],const char * nom, int reference){      
     for (int i = 0; i < PR; i++) {
         if (strcmp(produits[i].nom, nom) == 0){
             return produits[i];
@@ -183,7 +183,7 @@ struct voiture stock(struct voiture produits[],const char * nom, int reference){
     printf("Ce produit n'est pas valide ou a ete mal orthographier\n");
 }
 
-void placerestante(struct voiture produits[], int max){                 // strucutre pour le nombre de place restante dans le stockage
+void placerestante(struct voiture produits[], int max){             
     int capacite = 0;
     for (int i = 0; i < PR; i++) {
         capacite = capacite + (produits[i].taille * produits[i].quantite);
